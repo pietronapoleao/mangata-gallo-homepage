@@ -47,7 +47,7 @@ To run this site locally:
 3. Interact with the site (responsive menu, contact form, animations)
 
 ## Project Structure
-![Homepage preview 1](https://raw.githubusercontent.com/pietronapoleao/mangata-gallo-homepage/refs/heads/main/assets/images/structure.jpg)
+![Homepage preview 3](https://raw.githubusercontent.com/pietronapoleao/mangata-gallo-homepage/refs/heads/main/assets/images/structure.jpg)
 
 ## ✅ Requirements Completed
 
