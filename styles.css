@@ -1,0 +1,589 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo-container img {
+    height: 30px;
+    margin-top:10px;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+    position: relative;
+}
+
+nav ul li a {
+    font-weight: 500;
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+nav ul li a:hover {
+    color: #b8860b;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #b8860b;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url('assets/images/jewelry-showcase.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border: 2px solid white;
+    border-radius: 0;
+    font-weight: 500;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Collections Section */
+.collections {
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.collections h2 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.collections h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background-color: #b8860b;
+    margin: 1.5rem auto;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.collection-item {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.collection-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.collection-item:hover img {
+    transform: scale(1.05);
+}
+
+.collection-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    padding: 2rem;
+    color: white;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.collection-item:hover .collection-overlay {
+    opacity: 1;
+}
+
+.collection-overlay h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    transform: translateY(20px);
+    transition: transform 0.3s;
+}
+
+.collection-item:hover .collection-overlay h3 {
+    transform: translateY(0);
+}
+
+.collection-button {
+    display: inline-block;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+}
+
+.collection-item:hover .collection-button {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+.collection-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Design Section */
+.custom-design {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+}
+
+.custom-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.custom-content {
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+.custom-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.custom-content p {
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+/* About Section */
+.about {
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.owner {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    gap: 3rem;
+}
+
+.owner img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #b8860b;
+}
+
+.owner-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.owner-info p:first-of-type {
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #b8860b;
+}
+
+/* Contact Section */
+.contact {
+    padding: 6rem 5%;
+    background-color: #fff;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.contact h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background-color: #b8860b;
+    margin: 1.5rem auto;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    padding: 2rem;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #b8860b;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #b8860b;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 1rem;
+    color: #b8860b;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #b8860b;
+    color: white;
+}
+
+.contact-form {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form .cta-button {
+    background-color: #b8860b;
+    color: white;
+    border: none;
+    width: 100%;
+}
+
+.contact-form .cta-button:hover {
+    background-color: #a6780d;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 4rem 5% 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-logo img {
+    height: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo p {
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.quick-links h3, 
+.newsletter h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #b8860b;
+}
+
+.quick-links ul {
+    list-style: none;
+}
+
+.quick-links ul li {
+    margin-bottom: 0.8rem;
+}
+
+.quick-links ul li a:hover {
+    color: #b8860b;
+}
+
+.newsletter form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    font-family: inherit;
+}
+
+.newsletter button {
+    background-color: #b8860b;
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #a6780d;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .custom-design {
+        grid-template-columns: 1fr;
+    }
+    
+    .custom-content {
+        padding: 3rem;
+        order: 2;
+    }
+    
+    .custom-image {
+        height: 400px;
+        order: 1;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        background-color: #fff;
+        padding: 2rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+    }
+    
+    .nav-menu ul li {
+        margin: 1rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .owner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .quick-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .collections h2,
+    .custom-content h2,
+    .about h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+    
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .owner {
+        flex-direction: column;
+    }
+    
+    .owner img {
+        width: 150px;
+        height: 150px;
+    }
+}
